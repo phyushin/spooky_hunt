@@ -4,7 +4,7 @@ class GhostsController < ApplicationController
   end
 
   def show
-	@ghost = Ghost.find(params[:id])
+	@ghost = Ghost.find_by_ghost_uuid(params[:ghost_uuid])
   end
 
   def new
@@ -13,6 +13,7 @@ class GhostsController < ApplicationController
 
   def create
 	@ghost = Ghost.new(title: "new ghost", body: "spooky")
+	@ghost.ghost_uuid = SecureRandom.uuid
 
 	if @ghost.save
 	  redirect_to @ghost
@@ -20,5 +21,4 @@ class GhostsController < ApplicationController
           render :new
         end
   end
-
 end

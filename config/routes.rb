@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 	get "/ghosts/raymond", to: "ghosts#all"
 	get "/ghosts/winston", to: "ghosts#all"
 
-	get "/ghosts/:id", to: "ghosts#show"
+	get "/ghosts/:ghost_uuid", to: "ghosts#show"
 end
