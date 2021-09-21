@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	root "ghosts#index"
+	root "hunters#index"
 
 	get "/ghosts", to: "ghosts#index"
 
@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 	get "/ghosts/winston", to: "ghosts#all"
 
 	get "/ghosts/:ghost_uuid", to: "ghosts#show"
+
+	get "/hunters", to: "hunters#index"
 end
